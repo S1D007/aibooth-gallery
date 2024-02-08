@@ -14,34 +14,40 @@ const Page = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [scrollInterval, setScrollInterval] = useState<any | null>(null);
 
-
   useEffect(() => {
     const getData = async () => {
       try {
         const response = await axios.get(
           "https://roop.gokapturehub.com/getImages"
         );
-        const { data } = response;
-        setData(data);
+        const { data: newData } = response;
+
+        // Check if the new data is different from the existing data
+        if (JSON.stringify(newData) !== JSON.stringify(data)) {
+          setData(newData);
+        }
+        
         startAutoScroll();
       } catch (error) {
         console.error("Error fetching data:", error);
       }
     };
+
     getData();
-    const interval = setInterval(getData, 1000);
+
+    const interval = setInterval(getData, 10000); // Increased interval to 10 seconds
     return () => clearInterval(interval);
-  }, []);
+  }, [data]); // Added data as a dependency to useEffect
 
   const startAutoScroll = () => {
     if (!scrollInterval && containerRef.current) {
       const container = containerRef.current;
       const interval = setInterval(() => {
-        container.scrollLeft += 2;
+        container.scrollLeft += 1; // Reduced scroll speed
         if (container.scrollLeft >= container.scrollWidth - container.clientWidth) {
           container.scrollLeft = 0;
         }
-      }, 20); // Adjust scroll speed as needed
+      }, 20); // Increased interval duration
 
       setScrollInterval(interval);
     }
