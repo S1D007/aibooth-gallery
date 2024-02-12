@@ -25,7 +25,7 @@ const Page = () => {
 
         // Check if the new data is different from the existing data
         if (JSON.stringify(newData) !== JSON.stringify(data)) {
-          setData(newData);
+          setData(newData.reverse());
         }
 
         startAutoScroll();
