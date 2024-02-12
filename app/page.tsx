@@ -74,10 +74,10 @@ const Page = () => {
 
   return (
     <>
-      <div className="w-screen h-full p-2" onMouseEnter={stopAutoScroll} onMouseLeave={startAutoScroll}>
-        <img src={'/logo.png'} alt="logo" className="h-14" />
+      <div className="w-screen  h-full p-2" onMouseEnter={stopAutoScroll} onMouseLeave={startAutoScroll}>
+        <img src={'/Logo2.jpeg'} alt="logo" className="h-14" />
         <div
-          className="w-full flex gap-4 p-2 overflow-hidden h-full"
+          className="w-full mt-[2rem] flex gap-4 p-2 overflow-hidden h-full"
           ref={containerRef}
           style={{ whiteSpace: "nowrap" }}
         >
