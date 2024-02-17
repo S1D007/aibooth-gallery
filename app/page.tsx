@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
+import { useRouter } from 'next/navigation'
 
 type Data = {
   image: string;
@@ -90,7 +91,10 @@ const Page = () => {
     }
   };
 
+  const router = useRouter()
+
   return (
+
     <>
       <div
         className="w-screen  h-full p-2"
@@ -114,6 +118,22 @@ const Page = () => {
         </div>
       </div>
       <button
+        style={{
+          color: "white",
+          position: "fixed",
+          bottom: "20px",
+          left: "20px",
+          zIndex: "999",
+        }}
+        className=" bg-black rounded-lg px-4 py-2  "
+        onClick={() => 
+          router.push('/Print')
+        }
+      >
+        Print
+      </button>
+      <button
+      className=" bg-black rounded-lg px-4 py-2  "
         style={{
           color: "white",
           position: "fixed",
