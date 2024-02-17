@@ -97,7 +97,7 @@ const Page = () => {
         onMouseEnter={stopAutoScroll}
         onMouseLeave={startAutoScroll}
       >
-        <img src={"/logo.png"} alt="logo" className="h-14" />
+        {/* <img src={"/logo.png"} alt="logo" className="h-14" /> */}
         <div
           className="w-full mt-[2rem] flex gap-4 p-2 overflow-hidden h-full"
           ref={containerRef}
