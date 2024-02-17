@@ -55,7 +55,7 @@ const Page = () => {
 
     // const interval = setInterval(getData, 10000); // Increased interval to 10 seconds
     // return () => clearInterval(interval);
-  }, [data]); // Added data as a dependency to useEffect
+  }, []); // Added data as a dependency to useEffect
 
   const startAutoScroll = () => {
     if (!scrollInterval && containerRef.current) {
