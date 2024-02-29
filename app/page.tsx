@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { io } from "socket.io-client";
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 
 type Data = {
   image: string;
@@ -91,7 +91,7 @@ const Page = () => {
     }
   };
 
-  const router = useRouter()
+  // const router = useRouter()
 
   return (
 
@@ -117,7 +117,7 @@ const Page = () => {
           ))}
         </div>
       </div>
-      <button
+      {/* <button
         style={{
           color: "white",
           position: "fixed",
@@ -131,7 +131,7 @@ const Page = () => {
         }
       >
         Print
-      </button>
+      </button> */}
       <button
       className=" bg-black rounded-lg px-4 py-2  "
         style={{
